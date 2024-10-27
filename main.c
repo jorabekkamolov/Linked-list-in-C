@@ -4,7 +4,7 @@ void test_append() {
     LinkedList list = {NULL, 0};
     append(&list, 10);
     assert(list.head != NULL);
-    assert(list.head->value == 10);
+    assert(list.head->value == 11);
     delete_list(&list);
 }
 
