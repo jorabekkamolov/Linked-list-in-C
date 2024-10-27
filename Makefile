@@ -10,7 +10,7 @@ build:
 	$(CC) $(CFLAGS) main.c linked_list_.c -o main
 
 valgrind:
-	valgrind --leak-check=full ./main
+	valgrind --leak-check=full --error-exitcode=1 ./main
 
 cppcheck:
 	cppcheck --enable=all --inconclusive --std=c11 main.c linked_list_.c linked_list.h
