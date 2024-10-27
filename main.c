@@ -15,5 +15,5 @@ int main(void){
   insert(&list, it, 4);
   pop(&list, it);
   all_print(&list);
-  // delete_list(&list);
+  delete_list(&list);
 }
