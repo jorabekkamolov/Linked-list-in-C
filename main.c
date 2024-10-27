@@ -1,19 +1,24 @@
 #include "linked_list.h"
 
-int main(void){
-  LinkedList list = {NULL, 0};
+void test_append() {
+    LinkedList list = {NULL, 0};
+    append(&list, 10);
+    assert(list.head != NULL);
+    assert(list.head->value == 10);
+    delete_list(&list);
+}
 
-  append(&list, 4);
-  append(&list, 3);
-  append(&list, 2);
-  append(&list, 1);
+void test_size() {
+    LinkedList list = {NULL, 0};
+    append(&list, 10);
+    append(&list, 20);
+    assert(size(&list) == 2);
+    delete_list(&list);
+}
 
-  sort(&list);
-
-  Node* it;
-  it = find(&list, 4);
-  insert(&list, it, 4);
-  pop(&list, it);
-  all_print(&list);
-  delete_list(&list);
+int main() {
+    test_append();
+    test_size();
+    printf("All tests passed!\n");
+    return 0;
 }
