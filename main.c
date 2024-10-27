@@ -3,14 +3,17 @@
 int main(void){
   LinkedList list = {NULL, 0};
 
-  append(&list, 12);
-  append(&list, 13);
-  append(&list, 14);
-  append(&list, 15);
+  append(&list, 4);
+  append(&list, 3);
+  append(&list, 2);
+  append(&list, 1);
 
+  sort(&list);
+
+  Node* it;
+  it = find(&list, 4);
+  insert(&list, it, 4);
+  pop(&list, it);
   all_print(&list);
-
-  printf("Size List: %d\n", size(&list));
-
   delete_list(&list);
 }
