@@ -12,12 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up build environment
+      run: sudo apt-get update && sudo apt-get install -y gcc cppcheck valgrind
+
+    - name: Compile with make
+      run: make build
+
+    - name: Run tests with Valgrind
+      run: make valgrind
+
+    - name: Run Cppcheck analysis
+      run: make cppcheck
