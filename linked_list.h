@@ -14,9 +14,9 @@ typedef struct{
   int size;
 }LinkedList;
 
-void append(Node* root, int value);
-void all_print(Node* root);
-void delete_list(Node* root);
-int size(Node* root);
+void append(LinkedList* list, int value);
+void delete_list(LinkedList* list);
+void all_print(LinkedList* list);
+int size(LinkedList* list);
 
 #endif
