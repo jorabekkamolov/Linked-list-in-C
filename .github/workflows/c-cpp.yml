@@ -21,6 +21,9 @@ jobs:
     - name: Compile with make
       run: make
 
+    - name: Test
+      run: make test
+
     - name: Run tests with Valgrind
       run: make valgrind
 
